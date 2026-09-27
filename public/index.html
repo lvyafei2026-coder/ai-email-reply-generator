@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Email Reply Generator — Write Professional Replies in Seconds</title>
+<meta name="description" content="Free AI email reply generator. Paste any email and get a professional, friendly, or concise reply draft you can copy and send. Powered by Cloudflare Workers AI.">
+<meta name="keywords" content="ai email reply generator, email reply ai, professional email reply, email response generator, ai email assistant">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#0f766e">
+
+<link rel="canonical" href="https://toolara.dev/ai-email-reply-generator/">
+<link rel="alternate" hreflang="en" href="https://toolara.dev/ai-email-reply-generator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://toolara.dev/ai-email-reply-generator/zh/">
+<link rel="alternate" hreflang="x-default" href="https://toolara.dev/ai-email-reply-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Email Reply Generator — Write Replies in Seconds">
+<meta property="og:description" content="Paste an email, get a reply draft you can copy and send.">
+<meta property="og:url" content="https://toolara.dev/ai-email-reply-generator/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Email Reply Generator",
+  "url": "https://toolara.dev/ai-email-reply-generator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "description": "Free AI email reply generator that writes professional reply drafts from any received email.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="lang-switch">
+    <select id="langSelect" onchange="setLang(this.value)" aria-label="Language">
+      <option value="en">English</option>
+      <option value="zh">简体中文</option>
+    </select>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge">✉️ AI-powered</div>
+    <h1 data-i18n="title">AI Email Reply Generator</h1>
+    <p data-i18n="subtitle">Paste any email. Get a clear, ready-to-send reply draft in seconds.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2 class="visually-hidden" data-i18n="calcHeading">Email reply generator</h2>
+
+    <label for="tone" data-i18n="toneLabel">Reply tone</label>
+    <select id="tone">
+      <option value="professional" selected data-i18n="toneProfessional">Professional — neutral business tone</option>
+      <option value="friendly" data-i18n="toneFriendly">Friendly — warm and conversational</option>
+      <option value="concise" data-i18n="toneConcise">Concise — direct and brief</option>
+      <option value="firm" data-i18n="toneFirm">Firm — polite but unambiguous</option>
+    </select>
+
+    <label for="inputEmail" data-i18n="inputLabel">Paste the email you received</label>
+    <textarea id="inputEmail" rows="8" placeholder="Paste the original email here, including the greeting and signature if you have them..."></textarea>
+
+    <label for="context" data-i18n="contextLabel">Additional context (optional)</label>
+    <textarea id="context" rows="2" placeholder="e.g. I can't meet the deadline, but I can deliver 80% by Friday..."></textarea>
+
+    <div class="char-count"><span id="charCount">0</span> / 5000</div>
+
+    <button class="calc" type="button" id="generateBtn" onclick="generate()" data-i18n="calcBtn">Generate reply</button>
+
+    <div id="loading" class="loading" style="display:none;">
+      <div class="spinner"></div>
+      <div data-i18n="loadingText">Writing your reply...</div>
+    </div>
+
+    <div id="error" class="error" style="display:none;"></div>
+
+    <div id="result" role="region" aria-live="polite">
+      <div class="result-header">
+        <div class="result-label" data-i18n="resultLabel">Your reply draft</div>
+        <button class="copy-btn" type="button" onclick="copyResult()" data-i18n="copyBtn">Copy</button>
+        <span class="copy-copied" id="copyCopied" data-i18n="copyCopied">Copied!</span>
+      </div>
+      <div class="result-box" id="resultText"></div>
+      <div class="result-meta" id="resultMeta"></div>
+      <div class="result-disclaimer" data-i18n="resultDisclaimer">Review before sending. AI doesn't know the full relationship or context — you do.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="whatIsTitle">What does this tool do?</h2>
+    <p data-i18n="whatIsText">Writing replies takes time, especially when you need to hit the right tone. This tool reads the email you received, understands what's being asked, and drafts a reply — professional, friendly, concise, or firm, depending on what you choose. Paste the result into Gmail, Outlook, or wherever you write.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tonesTitle">Choosing the right tone</h2>
+    <ul>
+      <li data-i18n="tone1"><strong>Professional</strong> — For clients, partners, and formal business communication. Neutral, clear, and respectful.</li>
+      <li data-i18n="tone2"><strong>Friendly</strong> — For colleagues you know well, collaborators, and warm introductions. Sounds human, not corporate.</li>
+      <li data-i18n="tone3"><strong>Concise</strong> — For busy recipients who want the answer, not the story. Three sentences or fewer.</li>
+      <li data-i18n="tone4"><strong>Firm</strong> — For saying no, holding a boundary, or declining a request without sounding hostile.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+    <h3 data-i18n="faq1q">Is this tool free?</h3>
+    <p data-i18n="faq1a">Yes. It runs on Cloudflare Workers AI with a free daily quota. Normal use won't hit any limits.</p>
+
+    <h3 data-i18n="faq2q">Is my email content stored?</h3>
+    <p data-i18n="faq2a">No. Your email is sent to the AI model for processing and discarded immediately after. Nothing is stored, logged, or used for training.</p>
+
+    <h3 data-i18n="faq3q">Will the reply sound like me?</h3>
+    <p data-i18n="faq3a">Not perfectly. The tool produces a clean professional draft — you should edit it to match your voice and add any personal details. Treat it as a starting point, not a finished product.</p>
+
+    <h3 data-i18n="faq4q">Can I paste confidential emails?</h3>
+    <p data-i18n="faq4a">We don't store your content, but the text is sent to a third-party AI model running on Cloudflare's infrastructure. For highly sensitive material — legal, medical, or financial — consider removing names and specifics before pasting.</p>
+
+    <h3 data-i18n="faq5q">What if the generated reply misses the point?</h3>
+    <p data-i18n="faq5a">Try adding context in the "Additional context" field. For example: "The customer is asking for a refund, which we've agreed to." The model uses this to shape the reply. If it's still off, the original email may be too ambiguous for an AI to handle reliably.</p>
+
+    <div class="disclaimer" data-i18n="disclaimer"><strong>Disclaimer:</strong> This tool generates draft replies. Always review before sending — especially for legal, financial, or HR-related messages.</div>
+  </section>
+</main>
+
+<footer class="footer" data-i18n="footer">Runs on Cloudflare Workers AI. Your text is not stored.</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
