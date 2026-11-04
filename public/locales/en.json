@@ -1,5 +1,16 @@
 {
   "title": "Toolara Email Reply",
+  "heroTitle": "Reply to any email in the right tone",
+  "heroCta": "Try it now, free",
+  "heroPoint1": "Four tones: professional, friendly, firm, brief",
+  "heroPoint2": "Works with pasted email threads",
+  "heroPoint3": "Replies ready to send as-is",
+  "heroPreviewLabel": "Example",
+  "heroInputLabel": "INPUT",
+  "heroInputText": "Re: contract renewal, can we move to Thursday?",
+  "heroPreviewBody": "Hi Sarah,\n\nThanks for the detailed breakdown. The timeline\nworks on our side. I will confirm the budget line\nby Thursday and send the revised scope.\n\nBest,\nAlex",
+  "heroPreviewTag1": "Professional",
+  "heroPreviewTag2": "Friendly",
   "subtitle": "Paste any email. Get a clear, ready-to-send reply draft in seconds.",
   "calcHeading": "Email reply generator",
   "toneLabel": "Reply tone",
@@ -40,11 +51,13 @@
   "errGeneric": "Something went wrong. Please try again.",
   "errNetwork": "Network error. Please try again.",
   "errRateLimit": "Too many requests. Please wait a minute and try again.",
-  "heroBadge": "✉️ Free · 4 tones · Any inbox",
+  "heroBadge": "Free · 4 tones · Any inbox",
   "f1t": "Understands the ask",
   "f1d": "Reads the email you received and drafts a reply that answers what was actually asked.",
   "f2t": "Tone you control",
   "f2d": "Professional, friendly, concise or firm — plus optional context to steer the draft.",
   "f3t": "Paste-ready output",
-  "f3d": "Clean formatting that drops straight into Gmail, Outlook, or any mail client."
+  "f3d": "Clean formatting that drops straight into Gmail, Outlook, or any mail client.",
+  "ph1": "Paste the original email here, including the greeting and signature if you have them...",
+  "ph2": "e.g. I can't meet the deadline, but I can deliver 80% by Friday..."
 }

@@ -1,5 +1,16 @@
 {
   "title": "Toolara Email Reply",
+  "heroTitle": "用对的语气，回复任何邮件",
+  "heroCta": "免费试用",
+  "heroPoint1": "四种语气：正式 / 友好 / 强硬 / 简短",
+  "heroPoint2": "支持粘贴整段邮件往来",
+  "heroPoint3": "生成的回复可直接发出",
+  "heroPreviewLabel": "示例",
+  "heroInputLabel": "输入",
+  "heroInputText": "主题：合同续签，能改到周四吗？",
+  "heroPreviewBody": "Sarah 你好，\n\n谢谢这么详细的拆解。时间上我们没问题，\n我会在周四前确认预算项，并把修订后的范围发给你。\n\n祝好，\nAlex",
+  "heroPreviewTag1": "正式",
+  "heroPreviewTag2": "友好",
   "subtitle": "粘贴任何邮件，几秒内生成清晰、可直接发送的回复草稿。",
   "calcHeading": "邮件回复生成",
   "toneLabel": "回复语气",
@@ -40,11 +51,13 @@
   "errGeneric": "出错了，请重试。",
   "errNetwork": "网络错误，请重试。",
   "errRateLimit": "请求过于频繁，请稍等一分钟后再试。",
-  "heroBadge": "✉️ 免费 · 4 种语气 · 适配任何邮箱",
+  "heroBadge": "免费 · 四种语气 · 任意邮箱",
   "f1t": "读懂对方诉求",
   "f1d": "通读来信，针对真正的问题起草回复。",
   "f2t": "语气完全可控",
   "f2d": "Professional、Friendly、Concise、Firm 四选一，还可补充背景信息引导草稿。",
   "f3t": "即贴即发",
-  "f3d": "格式干净，直接粘贴到 Gmail、Outlook 等任何邮箱客户端。"
+  "f3d": "格式干净，直接粘贴到 Gmail、Outlook 等任何邮箱客户端。",
+  "ph1": "把原始邮件粘贴到这里，有称呼和签名一起贴上效果更好…",
+  "ph2": "例如：这个交付时间我赶不上，但周五前能交 80%…"
 }
