@@ -39,5 +39,12 @@
   "errShort": "Please paste at least 20 characters of the original email.",
   "errGeneric": "Something went wrong. Please try again.",
   "errNetwork": "Network error. Please try again.",
-  "errRateLimit": "Too many requests. Please wait a minute and try again."
+  "errRateLimit": "Too many requests. Please wait a minute and try again.",
+  "heroBadge": "✉️ Free · 4 tones · Any inbox",
+  "f1t": "Understands the ask",
+  "f1d": "Reads the email you received and drafts a reply that answers what was actually asked.",
+  "f2t": "Tone you control",
+  "f2d": "Professional, friendly, concise or firm — plus optional context to steer the draft.",
+  "f3t": "Paste-ready output",
+  "f3d": "Clean formatting that drops straight into Gmail, Outlook, or any mail client."
 }

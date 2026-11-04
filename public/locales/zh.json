@@ -39,5 +39,12 @@
   "errShort": "请至少粘贴 20 个字符的原邮件内容。",
   "errGeneric": "出错了，请重试。",
   "errNetwork": "网络错误，请重试。",
-  "errRateLimit": "请求过于频繁，请稍等一分钟后再试。"
+  "errRateLimit": "请求过于频繁，请稍等一分钟后再试。",
+  "heroBadge": "✉️ 免费 · 4 种语气 · 适配任何邮箱",
+  "f1t": "读懂对方诉求",
+  "f1d": "通读来信，针对真正的问题起草回复。",
+  "f2t": "语气完全可控",
+  "f2d": "Professional、Friendly、Concise、Firm 四选一，还可补充背景信息引导草稿。",
+  "f3t": "即贴即发",
+  "f3d": "格式干净，直接粘贴到 Gmail、Outlook 等任何邮箱客户端。"
 }
